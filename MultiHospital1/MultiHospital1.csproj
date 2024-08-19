@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85680600-90A0-4CCE-9128-0B0829118F36}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MultiHospital1</RootNamespace>
+    <AssemblyName>MultiHospital1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.117.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.117.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminConsultasMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminConsultasMenu.Designer.cs">
+      <DependentUpon>AdminConsultasMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEspecialidadecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEspecialidadecs.Designer.cs">
+      <DependentUpon>AdminEspecialidadecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHospitalMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHospitalMenu.Designer.cs">
+      <DependentUpon>AdminHospitalMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu.Designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlterarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarConsulta.Designer.cs">
+      <DependentUpon>AlterarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApagarEspecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApagarEspecial.Designer.cs">
+      <DependentUpon>ApagarEspecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApagarHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApagarHospital.Designer.cs">
+      <DependentUpon>ApagarHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApagarTipoConsultasMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApagarTipoConsultasMenu.Designer.cs">
+      <DependentUpon>ApagarTipoConsultasMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssConEspeci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssConEspeci.Designer.cs">
+      <DependentUpon>AssConEspeci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssociarEspeci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssociarEspeci.Designer.cs">
+      <DependentUpon>AssociarEspeci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssociarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssociarMedico.Designer.cs">
+      <DependentUpon>AssociarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssociarMedicoHospi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssociarMedicoHospi.Designer.cs">
+      <DependentUpon>AssociarMedicoHospi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssociarPaci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssociarPaci.Designer.cs">
+      <DependentUpon>AssociarPaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHash.cs" />
+    <Compile Include="ConsultaPacienteVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaPacienteVer.Designer.cs">
+      <DependentUpon>ConsultaPacienteVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriarConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarConsulta.Designer.cs">
+      <DependentUpon>CriarConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriarEspe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarEspe.Designer.cs">
+      <DependentUpon>CriarEspe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriarHospimenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarHospimenu.Designer.cs">
+      <DependentUpon>CriarHospimenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriarTiposdeConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarTiposdeConsulta.Designer.cs">
+      <DependentUpon>CriarTiposdeConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DessapaciHos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DessapaciHos.Designer.cs">
+      <DependentUpon>DessapaciHos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DessasociarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DessasociarMedico.Designer.cs">
+      <DependentUpon>DessasociarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSessao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniciarSessao.Designer.cs">
+      <DependentUpon>IniciarSessao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globais.cs" />
+    <Compile Include="IniciarSessHospi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniciarSessHospi.Designer.cs">
+      <DependentUpon>IniciarSessHospi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu-antes-is.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu-antes-is.Designer.cs">
+      <DependentUpon>Menu-antes-is.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHospiPrinci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuHospiPrinci.Designer.cs">
+      <DependentUpon>MenuHospiPrinci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuHospital.Designer.cs">
+      <DependentUpon>MenuHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuMedico.Designer.cs">
+      <DependentUpon>MenuMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPaciente.Designer.cs">
+      <DependentUpon>MenuPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelecionaInicioMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionaInicioMenu.Designer.cs">
+      <DependentUpon>SelecionaInicioMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerConHospi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerConHospi.Designer.cs">
+      <DependentUpon>VerConHospi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerConsultas.Designer.cs">
+      <DependentUpon>VerConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerConta.Designer.cs">
+      <DependentUpon>VerConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerContaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerContaMedico.Designer.cs">
+      <DependentUpon>VerContaMedico.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminConsultasMenu.resx">
+      <DependentUpon>AdminConsultasMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEspecialidadecs.resx">
+      <DependentUpon>AdminEspecialidadecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminHospitalMenu.resx">
+      <DependentUpon>AdminHospitalMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlterarConsulta.resx">
+      <DependentUpon>AlterarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApagarEspecial.resx">
+      <DependentUpon>ApagarEspecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApagarHospital.resx">
+      <DependentUpon>ApagarHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApagarTipoConsultasMenu.resx">
+      <DependentUpon>ApagarTipoConsultasMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssConEspeci.resx">
+      <DependentUpon>AssConEspeci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssociarEspeci.resx">
+      <DependentUpon>AssociarEspeci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssociarMedico.resx">
+      <DependentUpon>AssociarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssociarMedicoHospi.resx">
+      <DependentUpon>AssociarMedicoHospi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssociarPaci.resx">
+      <DependentUpon>AssociarPaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaPacienteVer.resx">
+      <DependentUpon>ConsultaPacienteVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarConsulta.resx">
+      <DependentUpon>CriarConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarEspe.resx">
+      <DependentUpon>CriarEspe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarHospimenu.resx">
+      <DependentUpon>CriarHospimenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarTiposdeConsulta.resx">
+      <DependentUpon>CriarTiposdeConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DessapaciHos.resx">
+      <DependentUpon>DessapaciHos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DessasociarMedico.resx">
+      <DependentUpon>DessasociarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSessao.resx">
+      <DependentUpon>IniciarSessao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSessHospi.resx">
+      <DependentUpon>IniciarSessHospi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu-antes-is.resx">
+      <DependentUpon>Menu-antes-is.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHospiPrinci.resx">
+      <DependentUpon>MenuHospiPrinci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHospital.resx">
+      <DependentUpon>MenuHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuMedico.resx">
+      <DependentUpon>MenuMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPaciente.resx">
+      <DependentUpon>MenuPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SelecionaInicioMenu.resx">
+      <DependentUpon>SelecionaInicioMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerConHospi.resx">
+      <DependentUpon>VerConHospi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerConsultas.resx">
+      <DependentUpon>VerConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerConta.resx">
+      <DependentUpon>VerConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerContaMedico.resx">
+      <DependentUpon>VerContaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\aexi-removebg-preview.ico" />
+    <Content Include="Images\aexi.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
